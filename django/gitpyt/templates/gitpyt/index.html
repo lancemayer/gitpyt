@@ -1,6 +1,10 @@
 {% extends 'base/base.html' %}
+{% load staticfiles %}
 
 {% block title %}GitPyt{% endblock %}
+{% block head %}
+	<link rel=" stylesheet" type="text/css" href="{% static 'gitpyt/style.css' %}" />
+{% endblock %}
 
 {% block body_block %}
 			<h1>Welcome to GitPyt</h1>

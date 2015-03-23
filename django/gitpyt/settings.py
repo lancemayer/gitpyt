@@ -83,5 +83,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Additional locations of static files
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
 # Seems to be uneeded at the moment
 # TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
