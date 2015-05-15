@@ -90,4 +90,6 @@ STATICFILES_DIRS = (
 )
 
 # Seems to be uneeded at the moment
-# TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+)

@@ -10,9 +10,9 @@
 			<h1>Made a Repo</h1>
 			<p>Now that was easy...did it work?</p>
 			<a href="/">Home</a>
-			<form action="/createrepository/new/" method="post">{% csrf_token %}
+			<form class="form-horizontal" action="/createrepository/new/" method="post">{% csrf_token %}
 				<label for="home">Home: </label>
-				<input id="home" type="text" name="home">
+				<input id="home" type="text" name="home"><br>
 				<label for="projectName">Project Name: </label>
 				<input id="projectName" type="text" name="projectName">
 				<input type="submit" value="Create">
