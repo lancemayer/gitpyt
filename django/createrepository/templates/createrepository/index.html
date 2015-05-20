@@ -10,13 +10,21 @@
 			<h1>Made a Repo</h1>
 			<p>Now that was easy...did it work?</p>
 			<a href="/">Home</a>
-			<form class="form-horizontal" action="/createrepository/new/" method="post">{% csrf_token %}
-				<label for="home">Home: </label>
-				<input id="home" type="text" name="home"><br>
-				<label for="projectName">Project Name: </label>
-				<input id="projectName" type="text" name="projectName">
-				<input type="submit" value="Create">
-			</form>
+			<div class="col-lg-4 col-lg-offset-1">
+				<form class="bs-component" action="/createrepository/new/" method="post">{% csrf_token %}
+					<div class="form-group">
+						<label class="control-label" for="home">Home: </label>
+						<input class="form-control" id="home" type="text" name="home"><br>
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="projectName">Project Name: </label>
+						<input class="form-control" id="projectName" type="text" name="projectName">
+					</div>
+					<div class="form-group">
+						<input type="submit" value="Create">
+					</div>
+				</form>
+			</div>
 			<h4>Current Repos</h4>
 			{% for item in dirContents %}
 				<p>{{ item }}</p>
