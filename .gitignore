@@ -53,5 +53,8 @@ docs/_build/
 # PyBuilder
 target/
 
+# SQLite File
+gitpyt.sqlite3
+
 # Misc
 run.sh

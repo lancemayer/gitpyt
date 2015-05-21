@@ -9,6 +9,8 @@
 {% block body_block %}
 			<h1>Welcome to GitPyt</h1>
 			<p>A friendly django based git repository manager</p>
-			<a href="/createrepository/">Create Repository</a>
+			{% if user.is_authenticated %}
+				<a href="/createrepository/">Create Repository</a>
+			{% endif %}
 			<p></p>
 {% endblock %}

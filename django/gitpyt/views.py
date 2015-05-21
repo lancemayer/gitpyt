@@ -46,6 +46,10 @@ def signup(request):
 
 		user.save()
 
+		userDir = "/home/git/" + username
+
+		os.mkdir(userDir)
+
 		return render(request, "gitpyt/login.html")
 
 	return render(request, "gitpyt/signup.html")
