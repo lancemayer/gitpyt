@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+
+{% block title %}Sign Up{% endblock %}
+{% block head %}
+	<link rel=" stylesheet" type="text/css" href="{% static 'gitpyt/style.css' %}" />
+{% endblock %}
+
+{% block body_block %}
+			<h1>Sign Up</h1>
+			<div class="col-lg-4 col-lg-offset-1">
+				<form action="" method="post">{% csrf_token %}
+					<div class="form-group">
+						<label class="control-label" for="firstName">First Name: </label>
+						<input class="form-control" id="firstName" type="text" name="firstName" autofocus><br>
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="lastName">Last Name: </label>
+						<input class="form-control" id="lastName" type="text" name="lastName"><br>
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="username">Username: </label>
+						<input class="form-control" id="username" type="text" name="username"><br>
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="password">Password: </label>
+						<input class="form-control" id="password" type="password" name="password">
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="passwordagain">Password Again: </label>
+						<input class="form-control" id="passwordagain" type="password" name="passwordagain">
+					</div>
+					<div class="form-group">
+						<input type="submit" value="Register">
+					</div>
+				</form>
+			</div>
+{% endblock %}
