@@ -8,5 +8,6 @@ urlpatterns = [
     url(r'^logout/$', 'gitpyt.views.logoutUser', name='logoutUser'),
     url(r'^signup/$', 'gitpyt.views.signup', name='signup'),
     url(r'^createrepository/', include('createrepository.urls', namespace='createrepository')),
+    url(r'^repository/', include('repository.urls', namespace='repository')),
     url(r'^admin/', include(admin.site.urls)),
 ]

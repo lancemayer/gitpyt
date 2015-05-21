@@ -6,20 +6,19 @@ import os
 # Create your views here.
 @login_required
 def index(request):
+	if request.method == "POST":
+		projectName = request.POST.get('projectName')
+		username = request.user.username
+		createNewRepository(projectName, username)
 	userDir = "/home/git/" + request.user.username
 	dirContents = os.listdir(userDir)
 	dirContents = [item for item in dirContents if not item.startswith(".")]
 
 	return render(request, "createrepository/index.html", {'dirContents': dirContents})
 
-# This should probably be converted to a simple function and be called via ajax
-def createNewRepository(request):
-	home = request.POST.get('home')
-	projectName = request.POST.get('projectName')
-	initPath = "git init --bare " + home + "/" + projectName + ".git"
-	os.system(initPath)
-	
-	dirContents = os.listdir("/home/git/")
-	dirContents = [item for item in dirContents if not item.startswith(".")]
+# This should probably be called via ajax
+def createNewRepository(projectName, username):
+	userDir = "/home/git/" + username
 
-	return render(request, "createrepository/index.html", {'dirContents': dirContents})
+	initPath = "git init --bare " + userDir + "/" + projectName + ".git"
+	os.system(initPath)

@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'gitpyt',
     'createrepository',
+    'repository',
 )
 
 MIDDLEWARE_CLASSES = (
