@@ -7,5 +7,10 @@
 {% endblock %}
 
 {% block body_block %}
-			<h1>Repository</h1>
+			<h1>{{ repoName }}</h1>
+
+			<!-- Lists files in the repo -->
+			{% for item in contents %}
+				<p>{{ item }}</p>
+			{% endfor %}
 {% endblock %}
